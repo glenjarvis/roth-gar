@@ -1,4 +1,4 @@
-package com.projectmalthorn.randomnumroller
+package com.glenjarvis.rothgar
 
 import android.os.Bundle
 import android.widget.Button
@@ -28,8 +28,6 @@ class MainActivity: AppCompatActivity() {
 
         //Sets the TextView to the random integer
         textView.text = randomNum.toString()
-
-        // _result.value = randomInt.toString()
     }
 
 }

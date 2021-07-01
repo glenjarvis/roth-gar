@@ -1,4 +1,4 @@
-package com.projectmalthorn.randomnumroller
+package com.glenjarvis.rothgar
 
 import org.junit.Test
 

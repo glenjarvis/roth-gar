@@ -1,4 +1,4 @@
-package com.projectmalthorn.randomnumroller
+package com.glenjarvis.rothgar
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.projectmalthorn.randomnumroller", appContext.packageName)
+        assertEquals("com.projectmalthorn.rothgar", appContext.packageName)
     }
 }
