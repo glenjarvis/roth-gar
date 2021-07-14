@@ -1,41 +1,344 @@
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools">
-
-<!--        <data>-->
-<!--            <variable-->
-<!--                name="mainActivity"-->
-<!--                type="rothgarivity" />-->
-<!--        </data>-->
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".MainActivity">
-
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/roll"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/number_output" />
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
         <TextView
-            android:id="@+id/number_output"
+            android:id="@+id/base_label"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:text="Click the Roll! button"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="wrap_content"
+            android:text="@string/base"
+            android:layout_marginTop="50dp"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintEnd_toStartOf="@+id/base_et"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Number"/>
+            app:layout_constraintTop_toTopOf="parent"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</layout>
+        <EditText
+            android:id="@+id/base_et"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:layout_marginTop="@dimen/margin_top"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintEnd_toStartOf="@id/iter_label"
+            app:layout_constraintStart_toEndOf="@+id/base_label"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/iter_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/iter"
+            android:layout_marginTop="@dimen/margin_top"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintEnd_toStartOf="@id/iter_et"
+            app:layout_constraintStart_toEndOf="@+id/base_et"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/iter_et"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:layout_marginTop="@dimen/margin_top"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iter_label"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/gb_cardview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/gb_mode_margin_top"
+        app:layout_constraintTop_toBottomOf="@id/base_label"
+        app:layout_constraintBottom_toTopOf="@id/attack_1_cardview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/CL_GB"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/gb_mode_label"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="GB Mode:"
+                android:textSize="@dimen/text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/gb_mode_switch"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/gb_mode_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="ON"
+                android:textSize="@dimen/text_size"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/gb_mode_label" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/attack_1_cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/attack_grouping_margin_top"
+        android:layout_marginStart="@dimen/margin_attack_sides"
+        android:layout_marginEnd="@dimen/margin_attack_sides"
+        app:layout_constraintTop_toBottomOf="@id/gb_cardview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/CL_attack_1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical">
+                <TextView
+                    android:id="@+id/attack_label_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/attack_1"
+                    android:textSize="@dimen/text_size"
+                    app:layout_constraintEnd_toStartOf="@+id/attack_total_1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/attack_total_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/attack_damage_separation"
+                    android:text="INT"
+                    android:textSize="@dimen/text_size"
+                    app:layout_constraintStart_toEndOf="@id/attack_label_1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/damage_label_1"/>
+
+                <TextView
+                    android:id="@+id/damage_label_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Damage#1"
+                    android:textSize="@dimen/text_size"
+                    android:layout_marginStart="@dimen/attack_damage_separation"
+                    app:layout_constraintEnd_toEndOf="@+id/damage_total_1"
+                    app:layout_constraintStart_toEndOf="@+id/attack_total_1"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/damage_total_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_attack_sides"
+                    android:text="INT"
+                    android:textSize="@dimen/text_size"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/damage_label_1"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/attack_calculation_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size"
+                    android:layout_marginTop="@dimen/margin_calculations"
+                    android:layout_marginStart="@dimen/margin_calculation_indent"
+                    android:layout_marginEnd="@dimen/attack_damage_separation"
+                    android:text="STRING CALCULATION HERE"
+                    app:layout_constraintTop_toBottomOf="@id/attack_label_1"
+                    app:layout_constraintStart_toStartOf="@id/attack_label_1" />
+
+                <TextView
+                    android:id="@+id/damage_calculation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_calculations"
+                    android:layout_marginStart="@dimen/margin_calculation_indent"
+                    android:text="STRING CALCULATION HERE"
+                    android:textSize="@dimen/text_size"
+                    app:layout_constraintTop_toBottomOf="@id/damage_label_1"
+                    app:layout_constraintStart_toStartOf="@id/damage_label_1"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/attack_2_cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/attack_grouping_margin_top"
+        android:layout_marginStart="@dimen/margin_attack_sides"
+        android:layout_marginEnd="@dimen/margin_attack_sides"
+        app:layout_constraintTop_toBottomOf="@id/attack_1_cardview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/CL_attack_2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical">
+            <TextView
+                android:id="@+id/attack_label_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/attack_1"
+                android:textSize="@dimen/text_size"
+                app:layout_constraintEnd_toStartOf="@+id/attack_total_2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/attack_total_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/attack_damage_separation"
+                android:text="INT"
+                android:textSize="@dimen/text_size"
+                app:layout_constraintStart_toEndOf="@id/attack_label_2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/damage_label_2"/>
+
+            <TextView
+                android:id="@+id/damage_label_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Damage#1"
+                android:textSize="@dimen/text_size"
+                android:layout_marginStart="@dimen/attack_damage_separation"
+                app:layout_constraintEnd_toEndOf="@+id/damage_total_2"
+                app:layout_constraintStart_toEndOf="@+id/attack_total_2"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/damage_total_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_attack_sides"
+                android:text="INT"
+                android:textSize="@dimen/text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/damage_label_2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/attack_calculation_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_calculations"
+                android:layout_marginStart="@dimen/margin_calculation_indent"
+                android:layout_marginEnd="@dimen/attack_damage_separation"
+                android:text="STRING CALCULATION HERE"
+                android:textSize="@dimen/text_size"
+                app:layout_constraintTop_toBottomOf="@id/attack_label_2"
+                app:layout_constraintStart_toStartOf="@id/attack_label_2" />
+
+            <TextView
+                android:id="@+id/damage_calculation_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_calculations"
+                android:layout_marginStart="@dimen/margin_calculation_indent"
+                android:text="STRING CALCULATION HERE"
+                android:textSize="@dimen/text_size"
+                app:layout_constraintTop_toBottomOf="@id/damage_label_2"
+                app:layout_constraintStart_toStartOf="@id/damage_label_2"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/attack_3_cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/attack_grouping_margin_top"
+        android:layout_marginStart="@dimen/margin_attack_sides"
+        android:layout_marginEnd="@dimen/margin_attack_sides"
+        app:layout_constraintTop_toBottomOf="@id/attack_2_cardview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/CL_attack_3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical">
+            <TextView
+                android:id="@+id/attack_label_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/attack_1"
+                android:textSize="@dimen/text_size"
+                app:layout_constraintEnd_toStartOf="@+id/attack_total_3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/attack_total_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/attack_damage_separation"
+                android:text="INT"
+                android:textSize="@dimen/text_size"
+                app:layout_constraintStart_toEndOf="@id/attack_label_3"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/damage_label_3"/>
+
+            <TextView
+                android:id="@+id/damage_label_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Damage#1"
+                android:textSize="@dimen/text_size"
+                android:layout_marginStart="@dimen/attack_damage_separation"
+                app:layout_constraintEnd_toEndOf="@+id/damage_total_3"
+                app:layout_constraintStart_toEndOf="@+id/attack_total_3"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/damage_total_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_attack_sides"
+                android:text="INT"
+                android:textSize="@dimen/text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/damage_label_3"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/attack_calculation_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_calculations"
+                android:layout_marginStart="@dimen/margin_calculation_indent"
+                android:layout_marginEnd="@dimen/attack_damage_separation"
+                android:text="STRING CALCULATION HERE"
+                android:textSize="@dimen/text_size"
+                app:layout_constraintTop_toBottomOf="@id/attack_label_3"
+                app:layout_constraintStart_toStartOf="@id/attack_label_3" />
+
+            <TextView
+                android:id="@+id/damage_calculation_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_calculations"
+                android:layout_marginStart="@dimen/margin_calculation_indent"
+                android:text="STRING CALCULATION HERE"
+                android:textSize="@dimen/text_size"
+                app:layout_constraintTop_toBottomOf="@id/damage_label_3"
+                app:layout_constraintStart_toStartOf="@id/damage_label_3"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

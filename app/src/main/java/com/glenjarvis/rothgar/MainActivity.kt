@@ -1,8 +1,6 @@
 package com.glenjarvis.rothgar
 
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 
@@ -15,20 +13,20 @@ class MainActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val rollButton: Button = findViewById(R.id.button)
-        rollButton.setOnClickListener { rollNumber()}
+//        val rollButton: Button = findViewById(R.id.button)
+//        rollButton.setOnClickListener { rollNumber()}
 
     }
-
-    private fun rollNumber() {
-        val randomNum =  (1..LIMIT).random()
-
-        // Links to the text view
-        val textView: TextView = findViewById(R.id.number_output)
-
-        //Sets the TextView to the random integer
-        textView.text = randomNum.toString()
-    }
+//
+//    private fun rollNumber() {
+//        val randomNum =  (1..LIMIT).random()
+//
+//        // Links to the text view
+//        val textView: TextView = findViewById(R.id.number_output)
+//
+//        //Sets the TextView to the random integer
+//        textView.text = randomNum.toString()
+//    }
 
 }
 
