@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_size">20sp</dimen>
+    <dimen name="margin_top">50dp</dimen>
+    <dimen name="gb_mode_margin_top">40dp</dimen>
+    <dimen name="attack_grouping_margin_top">70dp</dimen>
+    <dimen name="attack_damage_separation">70dp</dimen>
+    <dimen name="margin_attack_sides">20dp</dimen>
+    <dimen name="margin_calculations">15dp</dimen>
+    <dimen name="margin_calculation_indent">10dp</dimen>
+</resources>

@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">RothGar</string>
     <string name="roll">Roll!</string>
+    <string name="base">Base:</string>
+    <string name="iter">Iter</string>
+    <string name="attack_1">Attack# 1</string>
 </resources>
