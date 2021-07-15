@@ -62,7 +62,7 @@ class MainActivity: AppCompatActivity() {
         val switch: SwitchMaterial = findViewById(R.id.gb_mode_switch)
         // String Calculations
         val stringCalculationOne = "$firstRand + 3 = ${firstRand+3}"
-        val stringCalculationTwo = "$secondRand + $thirdRand + 3 = ${firstRand+secondRand+3}"
+        val stringCalculationTwo = "$secondRand + $thirdRand + 3 = ${thirdRand+secondRand+3}"
         // Set the text for damage calculations
         damageOneTextView.setText(stringCalculationOne)
         damageTwoTextView.setText(stringCalculationTwo)
@@ -104,7 +104,7 @@ class MainActivity: AppCompatActivity() {
         val switch: SwitchMaterial = findViewById(R.id.gb_mode_switch)
         // String Calculations
         val stringCalculationOne = "$firstRand + 3 = ${firstRand+3}"
-        val stringCalculationTwo = "$secondRand + $thirdRand + 3 = ${firstRand+secondRand+3}"
+        val stringCalculationTwo = "$secondRand + $thirdRand + 3 = ${thirdRand+secondRand+3}"
         // Set the text for damage calculations
         damageOneTextView.setText(stringCalculationOne)
         damageTwoTextView.setText(stringCalculationTwo)
@@ -146,7 +146,7 @@ class MainActivity: AppCompatActivity() {
         val switch: SwitchMaterial = findViewById(R.id.gb_mode_switch)
         // String Calculations
         val stringCalculationOne = "$firstRand + 3 = ${firstRand+3}"
-        val stringCalculationTwo = "$secondRand + $thirdRand + 3 = ${firstRand+secondRand+3}"
+        val stringCalculationTwo = "$secondRand + $thirdRand + 3 = ${thirdRand+secondRand+3}"
         // Set the text for damage calculations
         damageOneTextView.setText(stringCalculationOne)
         damageTwoTextView.setText(stringCalculationTwo)
