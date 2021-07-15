@@ -162,7 +162,7 @@
                     app:layout_constraintStart_toStartOf="@id/attack_label_1" />
 
                 <TextView
-                    android:id="@+id/damage_calculation"
+                    android:id="@+id/damage_calculation_top_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_calculations"
@@ -171,6 +171,17 @@
                     android:textSize="@dimen/text_size"
                     app:layout_constraintTop_toBottomOf="@id/damage_label_1"
                     app:layout_constraintStart_toStartOf="@id/damage_label_1"/>
+
+                <TextView
+                    android:id="@+id/damage_calculation_bottom_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_calculations"
+                    android:layout_marginStart="@dimen/margin_calculation_indent"
+                    android:text="STRING CALCULATION HERE"
+                    android:textSize="@dimen/text_size"
+                    app:layout_constraintTop_toBottomOf="@id/damage_calculation_top_1"
+                    app:layout_constraintStart_toStartOf="@id/damage_calculation_top_1"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
@@ -245,7 +256,7 @@
                 app:layout_constraintStart_toStartOf="@id/attack_label_2" />
 
             <TextView
-                android:id="@+id/damage_calculation_2"
+                android:id="@+id/damage_calculation_top_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_calculations"
@@ -254,6 +265,16 @@
                 android:textSize="@dimen/text_size"
                 app:layout_constraintTop_toBottomOf="@id/damage_label_2"
                 app:layout_constraintStart_toStartOf="@id/damage_label_2"/>
+            <TextView
+                android:id="@+id/damage_calculation_bottom_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_calculations"
+                android:layout_marginStart="@dimen/margin_calculation_indent"
+                android:text="STRING CALCULATION HERE"
+                android:textSize="@dimen/text_size"
+                app:layout_constraintTop_toBottomOf="@id/damage_calculation_top_2"
+                app:layout_constraintStart_toStartOf="@id/damage_calculation_top_2"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
@@ -328,7 +349,7 @@
                 app:layout_constraintStart_toStartOf="@id/attack_label_3" />
 
             <TextView
-                android:id="@+id/damage_calculation_3"
+                android:id="@+id/damage_calculation_top_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_calculations"
@@ -337,6 +358,16 @@
                 android:textSize="@dimen/text_size"
                 app:layout_constraintTop_toBottomOf="@id/damage_label_3"
                 app:layout_constraintStart_toStartOf="@id/damage_label_3"/>
+            <TextView
+                android:id="@+id/damage_calculation_bottom_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_calculations"
+                android:layout_marginStart="@dimen/margin_calculation_indent"
+                android:text="STRING CALCULATION HERE"
+                android:textSize="@dimen/text_size"
+                app:layout_constraintTop_toBottomOf="@id/damage_calculation_top_3"
+                app:layout_constraintStart_toStartOf="@id/damage_calculation_top_3"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
