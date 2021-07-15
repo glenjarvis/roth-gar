@@ -4,4 +4,10 @@
     <string name="base">Base:</string>
     <string name="iter">Iter</string>
     <string name="attack_1">Attack# 1</string>
+    <string name="attack_2">Attack# 2</string>
+    <string name="damage_2">Damage# 2</string>
+    <string name="damage_1">Damage# 1</string>
+    <string name="attack_3">Attack# 3</string>
+    <string name="damage_3">Damage# 3</string>
+    <string name="calculate">Calculate</string>
 </resources>

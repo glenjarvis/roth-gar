@@ -8,4 +8,5 @@
     <dimen name="margin_attack_sides">20dp</dimen>
     <dimen name="margin_calculations">15dp</dimen>
     <dimen name="margin_calculation_indent">10dp</dimen>
+    <dimen name="margin_attack_calc">20dp</dimen>
 </resources>
