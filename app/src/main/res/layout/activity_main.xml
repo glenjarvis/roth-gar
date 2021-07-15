@@ -89,8 +89,8 @@
                 android:id="@+id/gb_mode_switch"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="ON"
                 android:textSize="@dimen/text_size"
+                android:checked="false"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/gb_mode_label" />
