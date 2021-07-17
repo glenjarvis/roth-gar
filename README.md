@@ -1,23 +1,31 @@
 # roth-gar
-An incredibly personalized Android Application for RothGar the Ranger
-
-This is an Android Application written in Kotlin that will install on an Android Fire Tablet.
+A personalized Android Application for RothGar the Ranger
 
 ## Requirements
 
-MacOSX 10.15 or higher
-Android Studio 4.2 or higher
 Amazon Fire 10 Tablet (optional)
 
+## Developer Requirements:
 
-## Setup
+MacOSX 10.15 or higher
+Android Studio 4.2 or higher
 
-* Install Android Studio 
-* git clone https://github.com/glenjarvis/roth-gar.git
+## Developer Setup
+
+### For MacOS with Homebrew
+* Install [Android Studio](https://developer.android.com/studio/) version 4.2
+* Install [HomeBrew](https://docs.brew.sh/) if not already installed
+* Ensure Git is installed. It comes by default. I prefer using brew: `brew install git`
+* Ensure Java SDK is installed: `brew install openjdk`
+* Find JDK path: `brew info openjdk` (e.g.,  /usr/local/opt/openjdk/libexec/openjdk.jdk)
+* Update JDK in Android Studio (Menu -> Settings -> ... etc.) TODO: Fine tune these instructions
+* cd to the location where you keep Code Repositories: e.g., `cd ~/Code/`
+* Clone this repo: `git clone https://github.com/glenjarvis/roth-gar.git`
 * cd roth-gar
 * create `local.properties` file with contents `sdk.dir=<path to jdk>`
   For example, path to Android studio jdk: `~/Library/Android/sdk`
 * In Android Studio: File -> Open -> (roth-gar directory)
+* TODO: Fine tune instructions for upgrading Gradle
 
 ## Tested on:
 
