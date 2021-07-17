@@ -29,9 +29,11 @@ Android Studio 4.2 or higher
 
 ## Tested on:
 
+```
 MacOSX 10.15.17
 Android Studio 4.2.2
   Build #AI-202.7660.26.42.7486908, built on June 23, 2021
   Runtime version: 11.0.8+10-b944.6916264 x86_64
   VM: OpenJDK 64-Bit Server VM
 Fire OS 7.3.1.9 
+```
