@@ -1,6 +1,10 @@
 package com.glenjarvis.rothgar
 
+import android.graphics.Color
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableStringBuilder
+import android.text.style.ForegroundColorSpan
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -11,6 +15,7 @@ import com.google.android.material.switchmaterial.SwitchMaterial
 private const val ATTACK_LIMIT = 20
 private const val DAMAGE_LIMIT = 8
 private const val DAMAGE_LIMIT_2 = 6
+private val RANDOM_COLOR = ForegroundColorSpan(Color.BLUE)
 
 class MainActivity: AppCompatActivity() {
 
@@ -44,10 +49,14 @@ class MainActivity: AppCompatActivity() {
         val attackView: TextView = findViewById(R.id.attack_total_1)
         attackView.setText(calculation.toString())
 
-        val calculationString:String = "$randNum + $baseValue = $calculation"
+        // Add color to text
+        val spannableStringBuilder = SpannableStringBuilder("$randNum")
+        spannableStringBuilder.setSpan(RANDOM_COLOR, 0, spannableStringBuilder.length, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
+        spannableStringBuilder.append(" + $baseValue = $calculation")
+
         // Changes the Text View to display calculation
         val calcLabel: TextView = findViewById(R.id.attack_calculation_1)
-        calcLabel.setText(calculationString)
+        calcLabel.setText(spannableStringBuilder)
     }
 
     private fun damageOne(){
@@ -60,11 +69,15 @@ class MainActivity: AppCompatActivity() {
         val damageTwoTextView: TextView = findViewById(R.id.damage_calculation_bottom_1)
         val damage: TextView = findViewById(R.id.damage_total_1)
         val switch: SwitchMaterial = findViewById(R.id.gb_mode_switch)
-        // String Calculations
-        val stringCalculationOne = "$firstRand + 3 = ${firstRand+3}"
+
+        // String Calculations / Add color to text
+        val spannableStringBuilder = SpannableStringBuilder("$firstRand")
+        spannableStringBuilder.setSpan(RANDOM_COLOR, 0, spannableStringBuilder.length, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
+        spannableStringBuilder.append(" + 3 = ${firstRand+3}")
+
         val stringCalculationTwo = "$secondRand + $thirdRand + 3 = ${thirdRand+secondRand+3}"
         // Set the text for damage calculations
-        damageOneTextView.setText(stringCalculationOne)
+        damageOneTextView.setText(spannableStringBuilder)
         damageTwoTextView.setText(stringCalculationTwo)
 
         // GB Mode conditional
@@ -86,10 +99,15 @@ class MainActivity: AppCompatActivity() {
         val attackView: TextView = findViewById(R.id.attack_total_2)
         attackView.setText(calculation.toString())
 
-        val calculationString:String = "$randNum + $iterValue = $calculation"
+        // Add color to text
+        val spannableStringBuilder = SpannableStringBuilder("$randNum")
+        spannableStringBuilder.setSpan(RANDOM_COLOR, 0, spannableStringBuilder.length, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
+        spannableStringBuilder.append(" + $iterValue = $calculation")
+
+
         // Changes the Text View to display calculation
         val calcLabel: TextView = findViewById(R.id.attack_calculation_2)
-        calcLabel.setText(calculationString)
+        calcLabel.setText(spannableStringBuilder)
     }
 
     private fun damageTwo(){
@@ -102,11 +120,14 @@ class MainActivity: AppCompatActivity() {
         val damageTwoTextView: TextView = findViewById(R.id.damage_calculation_bottom_2)
         val damage: TextView = findViewById(R.id.damage_total_2)
         val switch: SwitchMaterial = findViewById(R.id.gb_mode_switch)
-        // String Calculations
-        val stringCalculationOne = "$firstRand + 3 = ${firstRand+3}"
+        // String Calculations / Add color to text
+        val spannableStringBuilder = SpannableStringBuilder("$firstRand")
+        spannableStringBuilder.setSpan(RANDOM_COLOR, 0, spannableStringBuilder.length, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
+        spannableStringBuilder.append(" + 3 = ${firstRand+3}")
+
         val stringCalculationTwo = "$secondRand + $thirdRand + 3 = ${thirdRand+secondRand+3}"
         // Set the text for damage calculations
-        damageOneTextView.setText(stringCalculationOne)
+        damageOneTextView.setText(spannableStringBuilder)
         damageTwoTextView.setText(stringCalculationTwo)
 
         // GB Mode conditional
@@ -128,10 +149,14 @@ class MainActivity: AppCompatActivity() {
         val attackView: TextView = findViewById(R.id.attack_total_3)
         attackView.setText(calculation.toString())
 
-        val calculationString:String = "$randNum + $baseValue = $calculation"
+        // Add color to text
+        val spannableStringBuilder = SpannableStringBuilder("$randNum")
+        spannableStringBuilder.setSpan(RANDOM_COLOR, 0, spannableStringBuilder.length, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
+        spannableStringBuilder.append(" + $baseValue = $calculation")
+
         // Changes the Text View to display calculation
         val calcLabel: TextView = findViewById(R.id.attack_calculation_3)
-        calcLabel.setText(calculationString)
+        calcLabel.setText(spannableStringBuilder)
     }
 
     private fun damageThree(){
@@ -144,11 +169,14 @@ class MainActivity: AppCompatActivity() {
         val damageTwoTextView: TextView = findViewById(R.id.damage_calculation_bottom_3)
         val damage: TextView = findViewById(R.id.damage_total_3)
         val switch: SwitchMaterial = findViewById(R.id.gb_mode_switch)
-        // String Calculations
-        val stringCalculationOne = "$firstRand + 3 = ${firstRand+3}"
+        // String Calculations / Add color to text
+        val spannableStringBuilder = SpannableStringBuilder("$firstRand")
+        spannableStringBuilder.setSpan(RANDOM_COLOR, 0, spannableStringBuilder.length, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
+        spannableStringBuilder.append(" + 3 = ${firstRand+3}")
+
         val stringCalculationTwo = "$secondRand + $thirdRand + 3 = ${thirdRand+secondRand+3}"
         // Set the text for damage calculations
-        damageOneTextView.setText(stringCalculationOne)
+        damageOneTextView.setText(spannableStringBuilder)
         damageTwoTextView.setText(stringCalculationTwo)
 
         // GB Mode conditional
