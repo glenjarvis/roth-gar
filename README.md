@@ -13,19 +13,34 @@ Android Studio 4.2 or higher
 ## Developer Setup
 
 ### For MacOS with Homebrew
-* Install [Android Studio](https://developer.android.com/studio/) version 4.2
+* Install [Android Studio](https://developer.android.com/studio/) version 4.2.2
+  Android Studio comes with the Java Development Kit (JDK) and the Android Software Development Kit
+  (SDK) installed within their Mac App Contents folder.
 * Install [HomeBrew](https://docs.brew.sh/) if not already installed
 * Ensure Git is installed. It comes by default. I prefer using brew: `brew install git`
-* Ensure Java SDK is installed: `brew install openjdk`
-* Find JDK path: `brew info openjdk` (e.g.,  /usr/local/opt/openjdk/libexec/openjdk.jdk)
-* Update JDK in Android Studio (Menu -> Settings -> ... etc.) TODO: Fine tune these instructions
 * cd to the location where you keep Code Repositories: e.g., `cd ~/Code/`
 * Clone this repo: `git clone https://github.com/glenjarvis/roth-gar.git`
-* cd roth-gar
-* create `local.properties` file with contents `sdk.dir=<path to jdk>`
-  For example, path to Android studio jdk: `~/Library/Android/sdk`
-* In Android Studio: File -> Open -> (roth-gar directory)
-* TODO: Fine tune instructions for upgrading Gradle
+* In Android Studio: File -> Open -> (roth-gar directory) -> build.gradle
+  (do not choose the build.gradle inside the app folder)
+* Android Studio will generate a local.properties file pointing to the internal Android SDK, do not change this directory unless you pre-installed the Android SDK and prefer to use that version.
+* In Android Studio: Open the build.gradle file in the app module (folder) and note these variables:
+ - compileSdkVersion
+ - buildToolsVersion
+ - minSdkVersion
+* Click on Tools -> SDK Manager
+* In the SDK Manager Window, check the box in the bottom right that says "Show Package Details"
+* Make sure the box for Android SDK Platform ## is checked (## = compileSdkVersion number)
+* Click on the SDK Tools tab
+* Check the box in the bottom right that says "Show Package Details"
+* Under Android SDK Build Tools, make sure the box for the buildToolsVersion string is checked
+* Click OK to install any of the items that weren't previously checked
+* Connect your device, or run your emulator, that has an OS version that matches or is higher than the minSdkVersion
+* Run the app to the connected device/emulator
+
+### Optional Steps to use a custom JDK
+* Install your preferred JDK: `brew install openjdk`
+* Find JDK path: `brew info openjdk` (e.g.,  /usr/local/opt/openjdk/libexec/openjdk.jdk)
+* In Android Studio: File -> Project Structure -> SDK Location in left menu pane -> update the JDK Location field 
 
 ## Tested on:
 
