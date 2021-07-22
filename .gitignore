@@ -51,6 +51,9 @@ captures/
 .idea/modules.xml
 # Comment next line if keeping position of elements in Navigation Editor is relevant for you
 .idea/navEditor.xml
+# Ignoring all idea files per https://github.com/glenjarvis/roth-gar/pull/11
+.idea/
+app/.idea/
 
 # External native build folder generated in Android Studio 2.2 and later
 .externalNativeBuild
