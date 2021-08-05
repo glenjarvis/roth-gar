@@ -76,9 +76,11 @@ class MainActivity: AppCompatActivity() {
         spannableStringBuilder.append(" + 3 = ${firstRand+3}")
 
         val stringCalculationTwo = "$secondRand + $thirdRand + 3 = ${thirdRand+secondRand+3}"
+        val spannableStringBuilder2 = SpannableStringBuilder(stringCalculationTwo)
+        spannableStringBuilder2.setSpan(RANDOM_COLOR, 0, 5, Spannable.SPAN_INCLUSIVE_INCLUSIVE)
         // Set the text for damage calculations
         damageOneTextView.setText(spannableStringBuilder)
-        damageTwoTextView.setText(stringCalculationTwo)
+        damageTwoTextView.setText(spannableStringBuilder2)
 
         // GB Mode conditional
         if (!switch.isChecked) {
@@ -126,9 +128,12 @@ class MainActivity: AppCompatActivity() {
         spannableStringBuilder.append(" + 3 = ${firstRand+3}")
 
         val stringCalculationTwo = "$secondRand + $thirdRand + 3 = ${thirdRand+secondRand+3}"
+        val spannableStringBuilder2 = SpannableStringBuilder(stringCalculationTwo)
+        spannableStringBuilder2.setSpan(RANDOM_COLOR, 0, 5, Spannable.SPAN_INCLUSIVE_INCLUSIVE)
+
         // Set the text for damage calculations
         damageOneTextView.setText(spannableStringBuilder)
-        damageTwoTextView.setText(stringCalculationTwo)
+        damageTwoTextView.setText(spannableStringBuilder2)
 
         // GB Mode conditional
         if (!switch.isChecked) {
@@ -174,10 +179,13 @@ class MainActivity: AppCompatActivity() {
         spannableStringBuilder.setSpan(RANDOM_COLOR, 0, spannableStringBuilder.length, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
         spannableStringBuilder.append(" + 3 = ${firstRand+3}")
 
+        // String Calculation / Add color to text for second calculation
         val stringCalculationTwo = "$secondRand + $thirdRand + 3 = ${thirdRand+secondRand+3}"
+        val spannableStringBuilder2 = SpannableStringBuilder(stringCalculationTwo)
+        spannableStringBuilder2.setSpan(RANDOM_COLOR, 0, 5, Spannable.SPAN_INCLUSIVE_INCLUSIVE)
         // Set the text for damage calculations
         damageOneTextView.setText(spannableStringBuilder)
-        damageTwoTextView.setText(stringCalculationTwo)
+        damageTwoTextView.setText(spannableStringBuilder2)
 
         // GB Mode conditional
         if (!switch.isChecked) {
